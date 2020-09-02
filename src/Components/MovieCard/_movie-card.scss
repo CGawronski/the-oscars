@@ -1,0 +1,40 @@
+.movie-card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 2;
+
+  background-color: rgba($color-secondary, 0.1);
+  // background-color: transparent;
+  color: $color-secondary;
+
+  padding: 2rem;
+  border: 3px solid $color-secondary;
+  border-radius: 3px;
+  margin-bottom: 3rem;
+  box-shadow: -5px 10px;
+
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  transition: all 0.2s;
+
+  &__poster {
+    height: 22rem;
+    grid-row: 1 / span 2;
+    margin-right: 2rem;
+    max-width: 15rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &:hover {
+    background-color: rgba($color-secondary, 0.275);
+    .movie-card__title {
+      // color: rgba($color-primary-dark, 0.7);
+    }
+  }
+}

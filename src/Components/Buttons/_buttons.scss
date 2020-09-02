@@ -1,0 +1,27 @@
+.nominate {
+  background-color: rgba($color-primary, 0.75);
+  color: white;
+
+  padding: 0.5rem 1.5rem;
+  box-shadow: -3px 2px 5px gray;
+
+  border: none;
+
+  border-radius: 5px;
+
+  font-size: 2rem;
+  font-weight: 600;
+  width: 75%;
+  height: 5rem;
+  align-self: center;
+  justify-self: center;
+  text-transform: uppercase;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+    background-color: $color-primary;
+    box-shadow: -5px 8px 10px gray;
+  }
+}
