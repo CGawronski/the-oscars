@@ -1,7 +1,13 @@
 import React from "react";
 
+import { TransitionGroup } from "react-transition-group";
+
 const NominationsList = (props) => {
-  return <div className="nominations-list">{props.renderNominationsList}</div>;
+  return (
+    <TransitionGroup className="nominations-list">
+      {props.renderNominationsList}
+    </TransitionGroup>
+  );
 };
 
 export default NominationsList;

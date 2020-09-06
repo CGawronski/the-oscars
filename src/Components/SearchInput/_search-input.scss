@@ -6,6 +6,10 @@
   justify-content: center;
   margin: 0 -2rem;
 
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+
   &__input {
     background: none;
     background-color: white;

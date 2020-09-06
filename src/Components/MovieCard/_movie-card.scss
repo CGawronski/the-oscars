@@ -48,3 +48,49 @@
     }
   }
 }
+
+// NOMINATION TRANSITIONS
+
+.nomination-enter {
+  opacity: 0.01;
+}
+
+.nomination-enter-active {
+  opacity: 1;
+
+  transition: all 500ms ease-in-out;
+}
+
+.nomination-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nomination-exit-active {
+  opacity: 0.01;
+  transform: translateX(100%);
+  transition: all 500ms ease-in-out;
+}
+
+// REMOVE NOMINATION TRANSITIONS
+
+.remove-nomination-enter {
+  opacity: 0.01;
+}
+
+.remove-nomination-enter-active {
+  opacity: 1;
+
+  transition: all 500ms ease-in-out;
+}
+
+.remove-nomination-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.remove-nomination-exit-active {
+  opacity: 0.01;
+  transform: translateX(-100%);
+  transition: all 500ms ease-in-out;
+}

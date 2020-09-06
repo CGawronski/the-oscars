@@ -8,7 +8,7 @@ import MovieCard from "../MovieCard/MovieCard";
 import InfoCard from "../InfoCard/InfoCard";
 import NominationsList from "../NominationsList/NominationsList";
 
-import ReactCSSTransitionGroup from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 class Body extends Component {
   constructor(props) {
@@ -48,39 +48,44 @@ class Body extends Component {
   renderMovieList() {
     if (!this.state.movies) {
       return (
-        <InfoCard
-          className="warning-card"
-          heading="Oops! No movies found."
-          message="Sorry, we didn't find any titles for that query. Please check your
+        <CSSTransition key={100} timeout={500} classNames="nomination">
+          <InfoCard
+            className="warning-card"
+            heading="Oops! No movies found."
+            message="Sorry, we didn't find any titles for that query. Please check your
       spelling or try another title."
-        />
+          />
+        </CSSTransition>
       );
     }
     if (this.state.nominations.length > 4) {
       return (
-        <InfoCard
-          className="warning-card"
-          heading="You've reached the nominations limit!"
-          message="You'll have to remove a nomination to add another one."
-        />
+        <CSSTransition key={101} timeout={500} classNames="nomination">
+          <InfoCard
+            className="warning-card"
+            heading="You've reached the limit of 5 nominations!"
+            message="You'll have to remove a nomination to add another one."
+          />
+        </CSSTransition>
       );
     }
-
     return this.state.movies.map((movie, index) => {
       if (this.state.nominationIDs.includes(movie.imdbID)) {
         return null;
       } else {
         return (
-          <MovieCard
-            key={index}
-            className="movie-card"
-            buttonClass="nominate"
-            buttonText="Nominate me!"
-            Poster={movie.Poster}
-            Title={movie.Title}
-            Year={movie.Year}
-            onClick={() => this.fetchNominations(movie.imdbID)}
-          />
+          <CSSTransition key={index} timeout={500} classNames="nomination">
+            <MovieCard
+              key={index}
+              className="movie-card"
+              buttonClass="nominate"
+              buttonText="Nominate me!"
+              Poster={movie.Poster}
+              Title={movie.Title}
+              Year={movie.Year}
+              onClick={() => this.fetchNominations(movie.imdbID)}
+            />
+          </CSSTransition>
         );
       }
     });
@@ -116,16 +121,18 @@ class Body extends Component {
     }
     return this.state.nominations.map((nomination, index) => {
       return (
-        <MovieCard
-          key={index}
-          className="movie-card movie-card--nomination"
-          buttonClass="remove-nomination"
-          buttonText="Remove"
-          Poster={nomination.Poster}
-          Title={nomination.Title}
-          Year={nomination.Year}
-          onClick={() => this.handleRemoveNomination(nomination.imdbID)}
-        />
+        <CSSTransition key={index} timeout={500} classNames="remove-nomination">
+          <MovieCard
+            key={index}
+            className="movie-card movie-card--nomination"
+            buttonClass="remove-nomination"
+            buttonText="Remove"
+            Poster={nomination.Poster}
+            Title={nomination.Title}
+            Year={nomination.Year}
+            onClick={() => this.handleRemoveNomination(nomination.imdbID)}
+          />
+        </CSSTransition>
       );
     });
   }

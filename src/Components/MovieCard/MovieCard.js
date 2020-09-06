@@ -1,10 +1,8 @@
-// LEFT OFF
-// NEED TO ADD NOMINATIONS STATE HANDLER IN MAIN AND PASS HERE TO CARD COMPONENT
-// ONCLICK NOMINATION BUTTON ONCLICK={THIS.PROPS.HandleNOMINATE}
-
 import React from "react";
 
 import Button from "../Buttons/Button";
+
+import { CSSTransition } from "react-transition-group";
 
 const MovieCard = (props) => {
   return (
