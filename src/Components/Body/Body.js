@@ -23,7 +23,7 @@ class Body extends Component {
   }
 
   fetchMovies = async (searchTerm) => {
-    const response = await Axios.get("http://www.omdbapi.com/", {
+    const response = await Axios.get("https://www.omdbapi.com/", {
       params: {
         apikey: "2dcf7309",
         s: searchTerm.trim(),
@@ -92,7 +92,7 @@ class Body extends Component {
   }
 
   fetchNominations = async (id) => {
-    const response = await Axios.get("http://www.omdbapi.com/", {
+    const response = await Axios.get("https://www.omdbapi.com/", {
       params: {
         apikey: "2dcf7309",
         i: id,
