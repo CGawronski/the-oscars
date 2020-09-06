@@ -1,0 +1,20 @@
+.list-headers {
+  grid-column: main-start / main-end;
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding-bottom: 3.5rem;
+  color: $color-primary;
+  font-size: 1.8rem;
+  justify-items: center;
+
+  &__search {
+    grid-column: 1;
+  }
+
+  &__nominations {
+    grid-column: 2;
+  }
+}

@@ -1,14 +1,9 @@
-.movie-card {
+%shared-card {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 2;
 
-  background-color: rgba($color-secondary, 0.1);
-  // background-color: transparent;
-  color: $color-secondary;
-
   padding: 2rem;
-  border: 3px solid $color-secondary;
   border-radius: 3px;
   margin-bottom: 3rem;
   box-shadow: -5px 10px;
@@ -17,6 +12,13 @@
   -webkit-font-smoothing: subpixel-antialiased;
 
   transition: all 0.2s;
+}
+
+.movie-card {
+  @extend %shared-card;
+  background-color: rgba($color-secondary, 0.1);
+  color: $color-secondary;
+  border: 3px solid $color-secondary;
 
   &__poster {
     height: 22rem;
@@ -33,8 +35,16 @@
 
   &:hover {
     background-color: rgba($color-secondary, 0.275);
-    .movie-card__title {
-      // color: rgba($color-primary-dark, 0.7);
+  }
+
+  &--nomination {
+    background-color: rgba($color-primary, 0.2);
+    border: 3px solid $color-primary;
+    box-shadow: -5px 10px $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: rgba($color-primary, 0.325);
     }
   }
 }

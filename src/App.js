@@ -1,14 +1,14 @@
 import React from "react";
 
 import Header from "./Components/Header/Header";
-import MainBody from "./Components/MainBody/MainBody";
+import Body from "./Components/Body/Body";
 
 function App() {
   return (
     <div className="app">
       <div className="grid-container">
         <Header />
-        <MainBody />
+        <Body />
       </div>
     </div>
   );

@@ -1,0 +1,9 @@
+.body {
+  grid-row: 2;
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-columns:
+    [main-start] repeat(6, 1fr) [main-center]
+    repeat(6, 1fr) [main-end];
+}

@@ -1,27 +1,63 @@
-.nominate {
-  background-color: rgba($color-primary, 0.75);
-  color: white;
-
+%shared {
   padding: 0.5rem 1.5rem;
-  box-shadow: -3px 2px 5px gray;
-
-  border: none;
-
   border-radius: 5px;
-
   font-size: 2rem;
   font-weight: 600;
   width: 75%;
   height: 5rem;
+  text-transform: uppercase;
+  outline: none;
+
+  box-shadow: -3px 2px 5px gray;
+  border: none;
+  color: white;
+
   align-self: center;
   justify-self: center;
-  text-transform: uppercase;
+
   transition: all 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateY(-3px);
     cursor: pointer;
     background-color: $color-primary;
     box-shadow: -5px 8px 10px gray;
+  }
+
+  &:active {
+    transform: translateY(-2px);
+    background-color: rgba($color-primary, 0.75);
+    box-shadow: -3px 2px 5px gray;
+  }
+}
+
+.nominate {
+  @extend %shared;
+
+  background-color: rgba($color-primary, 0.75);
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+  }
+
+  &:active {
+    background-color: rgba($color-primary, 0.75);
+  }
+}
+
+.remove-nomination {
+  @extend %shared;
+
+  background-color: rgba($color-secondary, 0.75);
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary;
+  }
+
+  &:active {
+    background-color: rgba($color-secondary, 0.75);
   }
 }

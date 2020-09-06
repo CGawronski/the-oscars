@@ -1,7 +1,10 @@
 .search {
+  grid-column: 4 / span 6;
+
   position: relative;
   display: flex;
   justify-content: center;
+  margin: 0 -2rem;
 
   &__input {
     background: none;

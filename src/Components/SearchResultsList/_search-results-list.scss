@@ -1,4 +1,5 @@
 .search-results-list {
   grid-row: 3;
-  width: 50%;
+  grid-column: main-start / main-center;
+  padding-right: 2rem;
 }

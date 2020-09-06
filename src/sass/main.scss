@@ -1,11 +1,14 @@
 @import "base";
 
 @import "../Components/Header/header";
-@import "../Components/MainBody/main-body";
-@import "../Components/SearchResultsList/search-results-list";
+@import "../Components/Body/body";
 @import "../Components/SearchInput/search-input";
+@import "../Components/ListHeaders/list-headers";
+
 @import "../Components/SearchResultsList/search-results-list";
+
 @import "../Components/MovieCard/movie-card";
 @import "../Components/InfoCard/info-card";
 @import "../Components/Buttons/buttons";
+
 @import "../Components/NominationsList/nominations-list";

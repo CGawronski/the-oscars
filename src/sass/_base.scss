@@ -54,12 +54,15 @@ a {
 
 .grid-container {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 
   grid-template-rows: min-content;
   // CENTER-START to CENTER-END = 1080px
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start]
-    repeat(6, [col-start] minmax(min-content, 16rem) [col-end]) [center-end]
+    repeat(3, [col-start] minmax(min-content, 16rem) [col-end])
+    [full-center]
+    repeat(3, [col-start] minmax(min-content, 16rem) [col-end])
+    [center-end]
     minmax(6rem, 1fr) [full-end];
 }

@@ -8,7 +8,7 @@ import Button from "../Buttons/Button";
 
 const MovieCard = (props) => {
   return (
-    <div className={props.class}>
+    <div className={props.className}>
       <img
         src={props.Poster}
         alt="Movie poster"
@@ -20,7 +20,11 @@ const MovieCard = (props) => {
         </h2>
       </div>
 
-      <Button className="nominate" text="Nominate me!" />
+      <Button
+        className={props.buttonClass}
+        text={props.buttonText}
+        onClick={props.onClick}
+      />
     </div>
   );
 };
