@@ -3,3 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## The Shoppies - Shopify Intern Challenge
 
 A movie nomination app for the first annual Shoppies, created with React and CSS.
+
+Check out the live project [here](https://shoppies-colin.herokuapp.com/).
