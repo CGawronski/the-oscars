@@ -7,7 +7,7 @@ const SearchInput = (props) => {
         type="search"
         onChange={props.onChange}
         className="search__input"
-        placeholder="Search for a movie"
+        placeholder="Search for a movie to nominate!"
       />
     </div>
   );

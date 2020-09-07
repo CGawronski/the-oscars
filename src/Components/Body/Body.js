@@ -63,8 +63,8 @@ class Body extends Component {
         <CSSTransition key={101} timeout={500} classNames="nomination">
           <InfoCard
             className="warning-card"
-            heading="You've reached the limit of 5 nominations!"
-            message="You'll have to remove a nomination to add another one."
+            heading="Thanks for voting! You've reached the limit of 5 nominations."
+            message="You'll have to remove a nomination to select another movie."
           />
         </CSSTransition>
       );
