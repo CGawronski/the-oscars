@@ -4,4 +4,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 A movie nomination app for the first annual Shoppies, created with React and CSS.
 
-Check out the live project here [shoppies-colin.herokuapp.com](https://shoppies-colin.herokuapp.com/).
+Check out the live project here: [shoppies-colin.herokuapp.com](https://shoppies-colin.herokuapp.com/).
