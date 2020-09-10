@@ -6,7 +6,6 @@
   padding: 2rem;
   border-radius: 3px;
   margin-bottom: 3rem;
-  box-shadow: -5px 10px;
 
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -17,11 +16,11 @@
 .movie-card {
   @extend %shared-card;
   background-color: rgba($color-secondary, 0.1);
-  color: $color-secondary;
-  border: 3px solid $color-secondary;
+  color: black;
+  border-bottom: 2px solid $color-secondary;
 
   &__poster {
-    height: 22rem;
+    height: 14rem;
     grid-row: 1 / span 2;
     margin-right: 2rem;
     max-width: 15rem;
@@ -39,8 +38,8 @@
 
   &--nomination {
     background-color: rgba($color-primary, 0.2);
-    border: 3px solid $color-primary;
-    box-shadow: -5px 10px $color-primary;
+    // border-bottom: 2px solid black;
+
     color: $color-primary;
 
     &:hover {

@@ -1,14 +1,15 @@
 import Axios from "axios";
 import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import SearchInput from "../SearchInput/SearchInput";
 import ListHeaders from "../ListHeaders/ListHeaders";
 import SearchResultsList from "../SearchResultsList/SearchResultsList";
 import MovieCard from "../MovieCard/MovieCard";
-import InfoCard from "../InfoCard/InfoCard";
+import InfoCard from "../InfoCards/InfoCard";
+import SubmissionCard from "../InfoCards/SubmissionCard";
 import NominationsList from "../NominationsList/NominationsList";
-
-import { CSSTransition } from "react-transition-group";
+import NominatedMovies from "../NominatedMovies/NominatedMovies";
 
 class Body extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Body extends Component {
       movies: [],
       nominations: [],
       nominationIDs: [],
+      nominationsSubmitted: false,
     };
   }
 
@@ -46,6 +48,9 @@ class Body extends Component {
   };
 
   renderMovieList() {
+    if (this.state.nominationsSubmitted) {
+      return this.renderNominatedMovies();
+    }
     if (!this.state.movies) {
       return (
         <CSSTransition key={100} timeout={500} classNames="nomination">
@@ -61,10 +66,11 @@ class Body extends Component {
     if (this.state.nominations.length > 4) {
       return (
         <CSSTransition key={101} timeout={500} classNames="nomination">
-          <InfoCard
+          <SubmissionCard
+            onClick={this.nominateMovies}
             className="warning-card"
             heading="Thanks for voting! You've reached the limit of 5 nominations."
-            message="You'll have to remove a nomination to select another movie."
+            message="You'll have to remove a nomination to select another movie. Or submit your nominations now!"
           />
         </CSSTransition>
       );
@@ -79,7 +85,7 @@ class Body extends Component {
               key={index}
               className="movie-card"
               buttonClass="nominate"
-              buttonText="Nominate me!"
+              buttonText="Nominate "
               Poster={movie.Poster}
               Title={movie.Title}
               Year={movie.Year}
@@ -119,6 +125,25 @@ class Body extends Component {
     if (!this.state.nominations) {
       return;
     }
+    if (this.state.nominationsSubmitted) {
+      return this.state.nominations.map((nomination, index) => {
+        return (
+          <CSSTransition
+            key={index}
+            timeout={500}
+            classNames="remove-nomination">
+            <MovieCard
+              key={index}
+              className="movie-card movie-card--nomination"
+              buttonClass="nominated"
+              Poster={nomination.Poster}
+              Title={nomination.Title}
+              Year={nomination.Year}
+            />
+          </CSSTransition>
+        );
+      });
+    }
     return this.state.nominations.map((nomination, index) => {
       return (
         <CSSTransition key={index} timeout={500} classNames="remove-nomination">
@@ -149,6 +174,23 @@ class Body extends Component {
     return this.state.movies === undefined || !this.state.movies.length
       ? null
       : headers;
+  }
+
+  nominateMovies = () => {
+    this.setState({ nominationsSubmitted: true });
+  };
+
+  // Need to style and animate this nicely...
+  renderNominatedMovies(index) {
+    return (
+      <>
+        <h1 className="final-nomination__title">And the nominees are...</h1>
+        <NominatedMovies
+          id="fade-in-nominations"
+          nominations={this.state.nominations}
+        />
+      </>
+    );
   }
 
   render() {

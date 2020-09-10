@@ -2,8 +2,6 @@ import React from "react";
 
 import Button from "../Buttons/Button";
 
-import { CSSTransition } from "react-transition-group";
-
 const MovieCard = (props) => {
   return (
     <div className={props.className}>

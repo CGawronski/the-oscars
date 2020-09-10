@@ -1,9 +1,8 @@
 // COLOR VARIABLES
-$color-primary: #95bf47;
-$color-primary-light: #b0cf77;
-$color-primary-dark: #5d8e3d;
+$color-primary: #deb852;
+$color-primary-dark: #917835;
 
-$color-secondary: #cd797c;
+$color-secondary: #522458;
 
 $color-grey-light-2: #aaa;
 
@@ -40,7 +39,7 @@ body {
   font-family: $font-primary;
   color: $color-grey-dark-2;
   font-weight: 300;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 a {
@@ -50,15 +49,15 @@ a {
 
 .grid-container {
   display: grid;
-  grid-gap: 2rem;
+  // grid-gap: 2rem;
 
   grid-template-rows: min-content;
   // CENTER-START to CENTER-END = 1080px
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start]
-    repeat(3, [col-start] minmax(min-content, 16rem) [col-end])
+    repeat(3, [col-start] minmax(min-content, 22rem) [col-end])
     [full-center]
-    repeat(3, [col-start] minmax(min-content, 16rem) [col-end])
+    repeat(3, [col-start] minmax(min-content, 22rem) [col-end])
     [center-end]
     minmax(6rem, 1fr) [full-end];
 }
