@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## The Shoppies - Shopify Intern Challenge
+## The Oscars Nominations
 
-A movie nomination app for the first annual Shoppies, created with React and CSS.
+A movie nomination app using the OMDb API. Search for and nominate your favourite films.
 
-### Check out the live project here: [shoppies-colin.herokuapp.com](https://shoppies-colin.herokuapp.com/).
+### Check out the live project here: [the-oscars.herokuapp.com](https://the-oscars.herokuapp.com/).
